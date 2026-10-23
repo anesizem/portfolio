@@ -94,6 +94,7 @@ img.photo{padding:0;object-fit:cover;display:block}
 /* Compétences */
 .skills{display:flex;flex-wrap:wrap;gap:10px}
 .chip{padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-weight:500;font-size:.96rem}
+.more-link{margin:8px 0 28px}
 .sk-t{font-size:1rem;margin:28px 0 12px;color:var(--muted);font-weight:600}
 .cert{margin-top:28px;color:var(--muted);font-size:.95rem}
 .chip small{color:var(--violet-ink);font-weight:600;margin-left:8px;font-size:.8rem}
@@ -289,6 +290,8 @@ dialog::backdrop{background:rgba(20,19,28,.55)}
       <li>Je compare mes publications pour repérer ce qui fait réagir, puis j'ajuste la suite.</li>
     </ul>
 
+    <p class="more-link"><button type="button" id="open-analyse" class="btn">Voir l'analyse détaillée de mes chiffres</button></p>
+
     <div class="stats">
       <article class="stat">
         <h3>Contenu&nbsp;1</h3>
@@ -394,6 +397,7 @@ function openProject(i){
   document.getElementById("dlg-steps").innerHTML=p.steps.map(function(s){return "<li>"+esc(s)+"</li>"}).join("");
   dlg.showModal();
 }
+(function(){var b=document.getElementById("open-analyse");if(!b)return;b.addEventListener("click",function(){for(var i=0;i<PROJECTS.length;i++){if(PROJECTS[i].title==="Analyse de mes contenus"){openProject(i);return}}})})();
 document.getElementById("close").addEventListener("click",function(){dlg.close()});
 dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 
