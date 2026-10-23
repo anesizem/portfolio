@@ -69,6 +69,22 @@ nav a.page.on{border-color:var(--violet)}
 
 img.photo{padding:0;object-fit:cover;display:block}
 
+.avail{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:var(--violet-ink);background:var(--soft);padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#22A06B}
+.hero .role b{color:var(--ink);font-weight:600}
+.qual{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px}
+.qual div{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.qual b{display:block;margin-bottom:6px}
+.qual p{margin:0;color:var(--muted);font-size:.95rem}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.tl li{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.tl .when{color:var(--violet-ink);font-weight:600;font-size:.93rem}
+.tl b{display:block}
+.tl span{color:var(--muted);font-size:.95rem}
+.prog{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.prog em{font-style:normal;font-size:.85rem;padding:5px 12px;border-radius:999px;background:var(--soft);color:var(--violet-ink);font-weight:500}
+@media (max-width:760px){.tl li{grid-template-columns:1fr;gap:6px}}
+
 /* À propos */
 .about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
 .facts{margin:0;padding:0;list-style:none;border-left:2px solid var(--violet);padding-left:24px;display:grid;gap:18px;align-content:start}
@@ -78,6 +94,8 @@ img.photo{padding:0;object-fit:cover;display:block}
 /* Compétences */
 .skills{display:flex;flex-wrap:wrap;gap:10px}
 .chip{padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-weight:500;font-size:.96rem}
+.sk-t{font-size:1rem;margin:28px 0 12px;color:var(--muted);font-weight:600}
+.cert{margin-top:28px;color:var(--muted);font-size:.95rem}
 .chip small{color:var(--violet-ink);font-weight:600;margin-left:8px;font-size:.8rem}
 
 /* Projets */
@@ -139,6 +157,7 @@ dialog::backdrop{background:rgba(20,19,28,.55)}
     <nav aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
       <a href="#apropos">À propos</a>
+      <a href="#formation">Formation</a>
       <a href="#competences">Compétences</a>
       <a href="#contact">Contact</a>
       <span class="sep" aria-hidden="true"></span>
@@ -155,10 +174,12 @@ dialog::backdrop{background:rgba(20,19,28,.55)}
   <section id="accueil" style="padding-top:0">
     <div class="hero">
       <div>
+        <span class="avail">Disponible pour une alternance dès maintenant</span>
         <h1>Anes Izem</h1>
-        <p class="role">Je me forme à l'analyse de données et à l'analytics engineering.</p>
+        <p class="role">Futur <b>Data Analyst</b>. Je recherche une <b>alternance de 3 ans</b> en Île-de-France, au rythme d'une semaine en entreprise et une semaine à l'école.</p>
         <div class="btns">
-          <a class="btn main" href="#projets">Voir mes projets</a>
+          <a class="btn main" id="cv-btn" href="cv_Anes_Izem_Data_Analyst.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+          <a class="btn" href="#projets">Voir mes projets</a>
           <a class="btn" href="#contact">Me contacter</a>
         </div>
       </div>
@@ -168,31 +189,60 @@ dialog::backdrop{background:rgba(20,19,28,.55)}
 
   <section id="apropos">
     <h2>À propos</h2>
-    <p class="lead">Un profil commerce et marketing qui se tourne vers la donnée.</p>
+    <p class="lead">Un profil marketing et commerce qui a trouvé sa voie dans la donnée.</p>
     <div class="about">
       <div>
-        <p>Issu d'un BUT Techniques de Commercialisation, j'ai appris à construire des sites web, à piloter des campagnes SEO et à lire des résultats pour décider de la suite. C'est ce goût de la mesure qui m'a mené vers la data.</p>
-        <p>Aujourd'hui, je poursuis mes études en informatique et je me forme au SQL, à Python et à la visualisation de données, avec un objectif clair : devenir analytics engineer et transformer des données brutes en décisions utiles.</p>
-        <p>En parallèle, je crée mon propre contenu et je collabore parfois avec des marques. J'y ai appris à analyser une audience et à rendre des chiffres lisibles.</p>
+        <p>J'ai découvert la data en analysant mes propres contenus : en suivant la rétention, le taux de complétion et l'engagement de mes vidéos, j'ai compris ce qui faisait la différence et j'ai pu ajuster ma stratégie. Mes comptes ont aujourd'hui dépassé les 117 millions d'impressions.</p>
+        <p>Mon BUT Techniques de Commercialisation (parcours marketing digital) m'a appris à lire des résultats pour décider de la suite : audits digitaux, référencement, suivi d'indicateurs de vente et de trafic. C'est ce goût de la mesure qui m'a mené vers l'analyse de données.</p>
+        <p>Aujourd'hui en L3 MITIC à l'Université Gustave Eiffel, je me forme au SQL, à Python et à la visualisation de données. Mon objectif : devenir Data Analyst, puis analytics engineer, et transformer des données brutes en décisions utiles.</p>
       </div>
       <ul class="facts">
-        <li><b>Objectif</b><span>Data analyst, analytics engineer</span></li>
-        <li><b>Formation</b><span>BUT Techniques de Commercialisation, L3 MITIC, Master MIAGE visé</span></li>
-        <li><b>Localisation</b><span>Île-de-France</span></li>
-        <li><b>Langues</b><span>Français et arabe : langue maternelle<br>Anglais : C1<br>Espagnol : B1</span></li>
+        <li><b>Je recherche</b><span>Alternance Data Analyst de 3 ans<br>Rythme 1 semaine / 1 semaine</span></li>
+        <li><b>Objectif</b><span>Data Analyst, puis analytics engineer</span></li>
+        <li><b>Mobilité</b><span>Toute l'Île-de-France · Permis B, véhiculé</span></li>
+        <li><b>Langues</b><span>Français et arabe : langues maternelles<br>Anglais : C1<br>Espagnol : B1</span></li>
       </ul>
     </div>
+    <div class="qual">
+      <div><b>Sens de l'analyse</b><p>Je pars des chiffres pour comprendre ce qui se passe, plutôt que de mon intuition.</p></div>
+      <div><b>Esprit stratégique</b><p>Une analyse n'est utile que si elle débouche sur une décision : je termine toujours par des recommandations.</p></div>
+      <div><b>Culture de la performance</b><p>Suivre des indicateurs, tester, mesurer et ajuster : c'est ce que je fais chaque semaine sur mes contenus.</p></div>
+      <div><b>J'apprends vite</b><p>Je me forme en continu, en cours et par moi-même, et je mets tout de suite en pratique sur des projets concrets.</p></div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <h2>Formation</h2>
+    <p class="lead">Un parcours qui combine marketing, commerce et informatique.</p>
+    <ul class="tl">
+      <li><span class="when">2026 – 2027</span><div><b>Licence 3 MITIC</b><span>Université Gustave Eiffel</span>
+        <div class="prog"><em>Analyse de données et statistiques</em><em>Algorithmique</em><em>IA et technologies émergentes</em><em>IA et RSE</em></div></div></li>
+      <li><span class="when">2023 – 2026</span><div><b>BUT Techniques de Commercialisation, parcours marketing digital</b><span>IUT de Saint-Denis, Université Sorbonne Paris Nord</span>
+        <div class="prog"><em>Marketing digital</em><em>SEO et SEA</em><em>Création de sites web</em><em>Suivi d'indicateurs</em></div></div></li>
+      <li><span class="when">Ensuite</span><div><b>Master MIAGE visé</b><span>Pour poursuivre vers l'analytics engineering</span></div></li>
+    </ul>
   </section>
 
   <section id="competences">
     <h2>Compétences</h2>
-    <p class="lead">Les outils que j'apprends et que j'utilise dans mes projets.</p>
+    <p class="lead">Ce que je fais déjà, et les outils data que j'apprends.</p>
+    <h3 class="sk-t">Ce que je fais déjà</h3>
+    <div class="skills">
+      <span class="chip">Analyse de performance de contenu</span>
+      <span class="chip">Suivi de statistiques et d'audience</span>
+      <span class="chip">Google Ads</span>
+      <span class="chip">Création de site (Wix)</span>
+      <span class="chip">Prompt engineering / IA</span>
+    </div>
+    <h3 class="sk-t">Outils data</h3>
     <div class="skills">
       <span class="chip">SQL<small>en apprentissage</small></span>
+      <span class="chip">Power BI (dataviz)<small>en apprentissage</small></span>
       <span class="chip">Python<small>en apprentissage</small></span>
+      <span class="chip">Git et CI/CD<small>en apprentissage</small></span>
       <span class="chip">Excel<small>en apprentissage</small></span>
-      <span class="chip">Power BI<small>en apprentissage</small></span>
     </div>
+    <p class="cert">Certifications : aucune pour l'instant, une certification en IA est ma priorité.</p>
   </section>
 
   <section id="contact">
@@ -290,6 +340,8 @@ dialog::backdrop{background:rgba(20,19,28,.55)}
     <h4>Ma démarche</h4><ul id="dlg-steps"></ul>
     <h4>Outils</h4><p id="dlg-tools"></p>
     <h4>Résultats</h4><p id="dlg-res"></p>
+    <h4 id="dlg-reco-h">Recommandations</h4><p id="dlg-reco"></p>
+    <h4>Ce que j'en retiens</h4><p id="dlg-ret"></p>
     <p id="dlg-link" hidden><a href="" id="dlg-link-a" target="_blank" rel="noopener" style="color:var(--violet-ink);font-weight:600">Voir le code sur GitHub</a></p>
   </div>
 </dialog>
@@ -299,15 +351,20 @@ var PROJECTS = [
   {grid:"data",tag:"Data",draft:false,link:"https://github.com/izemanes/analyste-ia-fiable",title:"Analyste IA fiable",intro:"Peut-on faire confiance à une IA qui répond aux questions chiffrées d'une entreprise ? Un banc d'essai de 60 questions pour le mesurer.",
    ctx:"Une IA sait écrire une requête SQL, mais elle peut livrer un chiffre faux sans le signaler. Sur des données d'entreprise réalistes (statuts, TVA, remises, retours, doublons clients, saisies incohérentes), une requête naïve surestime le chiffre d'affaires de 45 % et la marge de 75 %. J'ai voulu mesurer ce risque et comparer trois façons de brancher l'IA aux données. Les données sont fictives (boutique en ligne Atelier Nord, 22 706 commandes sur 3 ans, pièges insérés volontairement) pour connaître la bonne réponse avec certitude.",
    steps:["Génération d'un jeu de données volontairement difficile, avec les bonnes réponses calculées en SQL pur","Nettoyage et modélisation avec dbt et DuckDB, contrôlés par 37 tests de qualité automatiques","Couche sémantique : chaque indicateur (CA, marge, panier moyen, clients actifs) défini une seule fois, le SQL étant généré par du code et non par l'IA","Banc d'essai de 60 questions (simples, moyennes, difficiles, et 10 où la bonne réponse est de ne pas répondre)","Comparaison de 3 conditions : tables brutes, tables brutes + glossaire métier, couche sémantique","Notation automatique et rapport : réponse juste, abstention à raison, chiffre faux silencieux, erreur visible"],
-   tools:"Python, SQL, DuckDB, dbt, YAML, pytest, GitHub Actions",res:"Score global sur 60 questions : tables brutes 18 %, tables brutes + glossaire 95 %, couche sémantique 100 %. Chiffres faux livrés sans alerte : 72 % des questions sur tables brutes, 5 % avec le glossaire, 0 % avec la couche sémantique. Une bonne documentation suffit donc presque, et la couche sémantique supprime les erreurs restantes tout en répondant plus vite (3,7 s contre 7,6 s) et avec environ 6 fois moins de texte généré. Limites : données fictives, 60 questions, un seul passage, et une couche sémantique légère faite maison."},
+   tools:"Python, SQL, DuckDB, dbt, YAML, pytest, GitHub Actions",res:"Score global sur 60 questions : tables brutes 18 %, tables brutes + glossaire 95 %, couche sémantique 100 %. Chiffres faux livrés sans alerte : 72 % des questions sur tables brutes, 5 % avec le glossaire, 0 % avec la couche sémantique. Une bonne documentation suffit donc presque, et la couche sémantique supprime les erreurs restantes tout en répondant plus vite (3,7 s contre 7,6 s) et avec environ 6 fois moins de texte généré. Limites : données fictives, 60 questions, un seul passage, et une couche sémantique légère faite maison.",reco:"Pour une entreprise qui veut interroger ses données avec une IA : ne pas la brancher directement sur les tables brutes (18 % de bonnes réponses, 72 % de chiffres faux sans alerte). Rédiger d'abord un glossaire métier, qui suffit déjà à atteindre 95 %. Puis définir chaque indicateur une seule fois dans une couche sémantique, pour supprimer les erreurs restantes. Garder aussi des questions où l'IA doit s'abstenir de répondre, et contrôler les réponses avec des tests automatiques.",ret:"J'ai appris qu'un chiffre faux livré sans alerte est plus dangereux qu'une erreur visible, et que définir chaque indicateur une seule fois change presque tout. Projet réalisé en binôme avec Claude, l'IA d'Anthropic : j'ai cadré le sujet et suivi les résultats, avec ses conseils pour le code."},
+  {grid:"data",tag:"Data",draft:false,title:"Analyse de mes contenus",intro:"Ce que mes statistiques TikTok et Snapchat m'apprennent sur ce qui fait partager une vidéo.",
+   ctx:"Je publie mon propre contenu humoristique sur plusieurs comptes personnels. Pour comprendre ce qui fonctionne vraiment, j'ai comparé les statistiques de mes deux principales plateformes, TikTok et Snapchat, et j'ai regardé qui regarde mes vidéos. Les données viennent des outils d'analyse de chaque plateforme.",
+   steps:["Suivi des indicateurs de chaque compte : vues, likes, commentaires, partages ou republications, abonnés","Calcul de taux pour pouvoir comparer deux plateformes de tailles différentes : likes, partages et commentaires rapportés aux vues","Étude de l'audience : âge et sexe des spectateurs et des followers","Test d'hypothèses sur ce qui change vraiment le résultat : heure de publication, type de contenu, fonctionnement de l'algorithme","Ajustement de mes publications suivantes selon ce que les chiffres montrent"],
+   tools:"Statistiques natives de TikTok et de Snapchat",res:"Les taux de likes sont proches sur les deux plateformes (environ 12 à 14 % des vues) et le taux de partage est quasiment identique (environ 3 %). Le taux de commentaires est environ 60 fois plus élevé sur Snapchat (1 % contre 0,016 %). L'audience est jeune : environ 75 % des spectateurs TikTok ont entre 18 et 34 ans, avec 55 % d'hommes parmi les spectateurs et 61 % parmi les followers. L'heure de publication n'a pas d'effet visible sur les résultats. Limites : peu de publications cette année et pas d'accès aux statistiques des années précédentes, donc pas de comparaison dans le temps.",
+   ret:"Un contenu marche quand les gens s'y reconnaissent : c'est ce qui se partage le plus, quelle que soit la plateforme. Comprendre l'algorithme de chaque réseau compte beaucoup pour qu'une vidéo devienne virale, alors que l'heure de publication ne change presque rien."},
   {grid:"web",tag:"Marketing digital",draft:false,title:"Campagne Google Ads Nike × Blue Lock",intro:"Plan de campagne publicitaire sur Google Ads (SEA) pour le lancement d'une sneaker Nike × Blue Lock : budget, mots-clés, annonces et briefs vidéo.",
    ctx:"Projet de groupe du cours de référencement, présenté à l'oral le 13 novembre 2025. Objectif : préparer le lancement d'une collaboration fictive entre Nike et l'animé de football Blue Lock (sneaker bleue et blanche en édition limitée). La campagne vise les ventes et la capture d'une demande déjà existante auprès des fans de Blue Lock, des sneakerheads et des collectionneurs de 15 à 30 ans. Campagne fictive, non affiliée à Nike.",
    steps:["Cadrage : produit, cibles et conversions à suivre (achat confirmé, début de paiement, ajout au panier, inscription aux alertes « drop »)","Budget annuel de 1 M€ réparti par mois (pic en septembre pour le lancement, puis Black Friday et fêtes) et par objectif : 50 % conversion, 30 % considération, 20 % notoriété","Recherche de mots-clés sur trois thématiques (chaussure, sneakers, basket) : 55 mots-clés en exact et large, avec des mots-clés à exclure (running, Adidas, tennis, crampons, Décathlon)","Structure des campagnes : marque, générique et Blue Lock en annonces textes, Shopping par groupes de produits, YouTube","Rédaction des annonces : 15 titres, 4 descriptions, extensions et accroches, dans les limites de caractères de Google Ads","Briefs créatifs vidéo pour chaque étape du parcours (notoriété, considération, conversion), avec leurs ciblages et le remarketing"],
-   tools:"Google Ads, Google Ads Editor, Google Sheets, Canva",res:"Dossier de campagne complet et présentation orale de 26 diapositives. La campagne étant fictive, aucun résultat chiffré n'est mesuré : le plan définit les conversions à suivre et la répartition du budget pour un vrai lancement."},
+   tools:"Google Ads, Google Ads Editor, Google Sheets, Canva",res:"Dossier de campagne complet et présentation orale de 26 diapositives. La campagne étant fictive, aucun résultat chiffré n'est mesuré : le plan définit les conversions à suivre et la répartition du budget pour un vrai lancement.",reco:"Miser sur des contenus où l'audience se reconnaît, car c'est ce qui se partage le plus. Étudier le fonctionnement de l'algorithme de chaque plateforme avant d'adapter un format. Ne pas passer de temps à optimiser l'heure de publication, qui n'a pas d'effet visible. Garder un historique de statistiques d'une année à l'autre, pour pouvoir comparer dans le temps, ce qui me manque aujourd'hui.",recoTitle:"Pistes si le projet était réel",reco:"Lancer la campagne en test sur un petit budget et suivre les conversions définies (achat, début de paiement, ajout au panier, inscription aux alertes), puis déplacer le budget vers les mots-clés qui convertissent. Compléter régulièrement la liste de mots-clés à exclure avec les termes de recherche réels. Concentrer le budget sur le pic de lancement de septembre et sur le Black Friday.",ret:"J'ai appris à relier un budget, des mots-clés et des conversions à suivre dans un même plan. Projet de groupe : j'ai touché à tout, du cadrage au budget, aux mots-clés, aux annonces et à la présentation."},
   {grid:"web",tag:"Web et communication",draft:false,link:"https://anasizem785.wixsite.com/anas-izem",linkLabel:"Voir le site",title:"Site AMI Paris × Tayc",intro:"Site web et stratégie de communication d'une collaboration imaginaire entre AMI Paris et Tayc pour la Saint-Valentin.",
    ctx:"Projet étudiant : une collaboration fictive entre la marque de mode AMI Paris et l'artiste Tayc, deux univers tournés vers l'amour, pour célébrer la Saint-Valentin. L'idée : un événement mêlant défilé de la collection capsule et concert le 14 février, pour un public de 18 à 35 ans, amateur de mode premium et de R&B / afro-love (500 places à 50 €). Le site présente la collaboration, la collection capsule et l'événement. Projet non commercial, non affilié à AMI Paris ni à Tayc.",
    steps:["Cadrage : esprit de la collaboration (romantique, sensuel, urbain, inclusif), public cible et 5 objectifs marketing","Identité : logo AMI × Tayc, slogan « L'amour à fleur de peau, le style à fleur de lèvres. », palette noir, blanc cassé, beige, rouge cœur et or","Stratégie de communication : ton et canaux (TikTok, Instagram, Snapchat, LinkedIn, pages mode)","Calendrier de contenu en 4 phases sur 10 semaines, du 1er décembre au 14 février : teasing, révélation, activation, événement","Indicateurs de suivi (KPI) : portée, impressions, vues, abonnés, billets vendus, taux de remplissage, ventes de la capsule","Création du site avec Wix : accueil, collection, présentation du projet et page événement"],
-   tools:"Wix, dossier de campagne (concept, stratégie, charte graphique, calendrier de contenu, KPI)",res:"Site en ligne et dossier de campagne complet de 12 pages. La campagne étant fictive, aucun résultat chiffré n'est mesuré : les KPI définis servent de cadre de suivi pour un vrai lancement."}
+   tools:"Wix, dossier de campagne (concept, stratégie, charte graphique, calendrier de contenu, KPI)",res:"Site en ligne et dossier de campagne complet de 12 pages. La campagne étant fictive, aucun résultat chiffré n'est mesuré : les KPI définis servent de cadre de suivi pour un vrai lancement.",recoTitle:"Pistes si le projet était réel",reco:"Suivre les indicateurs prévus semaine par semaine pendant les 4 phases (portée, abonnés, billets vendus, taux de remplissage) et comparer chaque phase à l'objectif. Renforcer les canaux qui amènent le plus de ventes de billets. Ajouter sur le site un suivi des visites et des clics vers la billetterie pour mesurer l'effet de la communication.",ret:"J'ai appris à construire une identité de marque cohérente, du site jusqu'aux indicateurs de suivi. Projet de groupe : j'ai touché à tout, de la stratégie à l'identité, au calendrier de contenu et au site."}
 ];
 
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -329,6 +386,9 @@ function openProject(i){
   document.getElementById("dlg-ctx").textContent=p.ctx;
   document.getElementById("dlg-tools").textContent=p.tools;
   document.getElementById("dlg-res").textContent=p.res;
+  document.getElementById("dlg-ret").textContent=p.ret;
+  document.getElementById("dlg-reco-h").textContent=p.recoTitle||"Recommandations";
+  document.getElementById("dlg-reco").textContent=p.reco;
   var lk=document.getElementById("dlg-link");
   if(p.link){var la=document.getElementById("dlg-link-a");la.href=p.link;la.textContent=p.linkLabel||"Voir le code sur GitHub";lk.hidden=false}else{lk.hidden=true}
   document.getElementById("dlg-steps").innerHTML=p.steps.map(function(s){return "<li>"+esc(s)+"</li>"}).join("");
@@ -340,7 +400,7 @@ dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 /* Lien actif dans le menu */
 var links=[].slice.call(document.querySelectorAll("nav a"));
 var views={home:document.getElementById("view-home"),projets:document.getElementById("view-projets"),contenu:document.getElementById("view-contenu")};
-var homeIds=["accueil","apropos","competences","contact"];
+var homeIds=["accueil","apropos","formation","competences","contact"];
 var current="home";
 function show(name){
   current=name;
@@ -369,6 +429,21 @@ function route(){
 window.addEventListener("hashchange",route);
 window.addEventListener("scroll",onScroll,{passive:true});
 route();
+
+/* CV : dans Claude, téléchargement via la capacité "downloads" ; ailleurs (GitHub Pages), lien normal */
+(function(){
+  var btn=document.getElementById("cv-btn");
+  if(!btn||!window.claude||!window.claude.use)return;
+  var dl=null;
+  window.claude.use("downloads").then(function(d){dl=d}).catch(function(){});
+  btn.addEventListener("click",function(e){
+    if(!dl)return;
+    e.preventDefault();
+    fetch(btn.getAttribute("href")).then(function(r){if(!r.ok)throw new Error("fetch");return r.blob()})
+      .then(function(b){return dl.save({filename:"CV_Anes_Izem_Data_Analyst.pdf",data:b})})
+      .catch(function(err){if(err&&err.code==="declined")return;btn.textContent="CV indisponible ici, écris-moi pour le recevoir";});
+  });
+})();
 </script>
 </body>
 </html>
