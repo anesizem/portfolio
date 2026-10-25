@@ -432,6 +432,11 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
 .fslot{border:1.5px dashed var(--rule);border-radius:20px;min-height:220px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;color:var(--muted)}
 .fslot b{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(2.6rem,4vw,3.4rem);color:var(--rule);line-height:1}
 .fslot span:last-child{font-size:.9rem}
+.fslot.wip{border-style:solid;border-color:var(--signal-ink);color:var(--ink);gap:14px}
+.fslot.wip .st{font-style:normal;color:var(--signal-ink)}
+.fslot.wip b{color:var(--ink);font-size:clamp(1.7rem,2.6vw,2.2rem);line-height:1.05}
+.fslot.wip p{margin:0;color:var(--muted);font-size:.92rem}
+.fslot.wip .wt{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
 .future.onpage{margin-top:clamp(56px,7vw,100px)}
 @media (max-width:900px){.future{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:560px){.cvtop .tag{display:none}.cvtop{justify-content:flex-end}.fslots{grid-template-columns:minmax(0,1fr)}.fslot{min-height:150px}}
@@ -531,7 +536,7 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
     <div class="future">
       <div class="fhead"><p class="tag">[ à venir ]</p><h3>Prochains <em>projets</em></h3><p>De nouveaux projets data sont en préparation. Ils apparaîtront ici dès qu'ils seront terminés.</p></div>
       <div class="fslots">
-        <div class="fslot"><span class="tag">04</span><b>bientôt</b><span>Projet en préparation</span></div>
+        <div class="fslot wip"><span class="tag">04 · <i class="st">en cours</i></span><b>Portée ou abonnés&nbsp;?</b><p>Analyse de mes publications : à partir des statistiques de 23 posts sur TikTok, Snapchat et Instagram, j'étudie ce qui fait gagner des abonnés plutôt que des vues (durée, partages, abandon, plateforme).</p><span class="wt">Excel · Python (pandas)</span></div>
         <div class="fslot"><span class="tag">05</span><b>bientôt</b><span>Projet en préparation</span></div>
       </div>
     </div>
@@ -622,7 +627,7 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
     <div class="future onpage">
       <div class="fhead"><p class="tag">[ à venir ]</p><h3>Prochains <em>projets</em></h3><p>De nouveaux projets data sont en préparation. Ils apparaîtront ici dès qu'ils seront terminés.</p></div>
       <div class="fslots">
-        <div class="fslot"><span class="tag">04</span><b>bientôt</b><span>Projet en préparation</span></div>
+        <div class="fslot wip"><span class="tag">04 · <i class="st">en cours</i></span><b>Portée ou abonnés&nbsp;?</b><p>Analyse de mes publications : à partir des statistiques de 23 posts sur TikTok, Snapchat et Instagram, j'étudie ce qui fait gagner des abonnés plutôt que des vues (durée, partages, abandon, plateforme).</p><span class="wt">Excel · Python (pandas)</span></div>
         <div class="fslot"><span class="tag">05</span><b>bientôt</b><span>Projet en préparation</span></div>
       </div>
     </div>
