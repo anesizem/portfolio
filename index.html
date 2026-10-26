@@ -492,6 +492,15 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
   .reach .tag,.contact .tag{font-size:.78rem}
   .contact .inner{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 90px)}
 }
+
+/* ---------- Écrans tactiles / navigateurs intégrés (LinkedIn, Instagram) : rendu léger, pas de zones blanches ---------- */
+html{background:var(--paper)}
+@media (hover:none){
+  .sheetwrap{box-shadow:none;border-radius:0}
+  .contact{position:relative}
+  .nav.solid{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--paper)}
+  .dock{box-shadow:0 10px 24px -14px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.1)}
+}
 </style>
 
 <script>(function(){try{history.scrollRestoration="manual"}catch(e){}if(location.hash){try{history.replaceState(null,"",location.href.split("#")[0])}catch(e){}}window.scrollTo(0,0);var h=location.hash.slice(1);if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&(!h||h==="accueil"))document.documentElement.classList.add("intro-on")})()</script>
@@ -982,7 +991,8 @@ function setDock(k){dk=k;$$(".dock a").forEach(function(a){a.classList.toggle("o
 var SPY=["apropos","echantillon","audience","methode"];
 function spy(){var k="home";if(sheet.getBoundingClientRect().bottom<innerHeight-30)k="contact";else if(current==="projets")k="echantillon";else if(current==="contenu")k="audience";else SPY.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<innerHeight*.45)k=id});if(k!==dk)setDock(k)}
 var sheet=$("#sheet"),rev=$("#contact");
-function fitReveal(){rev.classList.remove("st");var h=rev.offsetHeight;if(h>innerHeight-8){rev.classList.add("st");sheet.style.marginBottom="0"}else sheet.style.marginBottom=h+"px"}
+var TOUCH=matchMedia("(hover:none)").matches;
+function fitReveal(){if(TOUCH){rev.classList.add("st");sheet.style.marginBottom="0";return}rev.classList.remove("st");var h=rev.offsetHeight;if(h>innerHeight-8){rev.classList.add("st");sheet.style.marginBottom="0"}else sheet.style.marginBottom=h+"px"}
 function route(first){
   var id=(location.hash||"#accueil").slice(1);
   if(id==="contact"){toBottom(first);setDock("contact");return}
