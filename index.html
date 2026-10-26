@@ -450,6 +450,36 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
 .gal figure{margin:0}
 .gal img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--rule)}
 .gal figcaption{margin-top:6px}
+
+/* ---------- Mobile (lecture recruteur) ---------- */
+@media (max-width:560px){
+  body{font-size:16px}
+  .tag{font-size:.78rem;letter-spacing:.04em}
+  .sec{padding-block:64px}
+  .head{margin-bottom:32px}
+  .head p{font-size:1rem}
+  .statement{font-size:1.65rem;line-height:1.2}
+  .statement .wd{opacity:1!important}
+  .dkpi{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;margin-top:32px}
+  .dkpi b{font-size:2rem}
+  .dkpi span{font-size:.86rem}
+  .facts{margin-top:36px}
+  .facts dd small{font-size:.9rem}
+  .future{margin-top:48px}
+  .hero{min-height:max(560px,100svh)}
+  .hero .lede{font-size:1.06rem}
+  .hero-bot{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 86px)}
+  .dock{padding:5px;border-radius:20px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px)}
+  .dock .dnote{display:none}
+  .dock a{height:44px;min-width:46px;padding:0 8px}
+  .dock.tuck{transform:translate(-50%,160%);opacity:0;pointer-events:none}
+  main{padding-bottom:24px}
+  .bar .lab{font-size:.76rem}
+  .diag .bar{font-size:.88rem}
+  .note,.diag .note{font-size:.88rem}
+  .reach .tag,.contact .tag{font-size:.78rem}
+  .contact .inner{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 90px)}
+}
 </style>
 
 <script>(function(){try{history.scrollRestoration="manual"}catch(e){}if(location.hash){try{history.replaceState(null,"",location.href.split("#")[0])}catch(e){}}window.scrollTo(0,0);var h=location.hash.slice(1);if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&(!h||h==="accueil"))document.documentElement.classList.add("intro-on")})()</script>
@@ -511,7 +541,7 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
           <div><dt class="tag">Objectif</dt><dd>Data analyst, analytics engineer</dd></div>
           <div><dt class="tag">Formation</dt><dd>L3 MITIC<small>après un BUT TC · Master MIAGE visé</small></dd></div>
           <div><dt class="tag">En apprentissage</dt><dd class="skills"><span>SQL</span><span>Python</span><span>Power BI</span></dd></div>
-          <div><dt class="tag">Langues</dt><dd>Français, arabe<small>Anglais C1 · Espagnol A2/B1</small></dd></div>
+          <div><dt class="tag">Langues</dt><dd>Français, arabe<small>Anglais C1 · Espagnol B1</small></dd></div>
         </dl>
       </div>
     </div>
@@ -1177,4 +1207,10 @@ document.addEventListener("click",function(e){
     return fetch(a.getAttribute("href")).then(function(r){return r.blob()}).then(function(b){return dl.save({filename:"CV_Anes_Izem.pdf",data:b})}).then(function(){cvSay("CV enregistré")});
   }).catch(function(err){if(err&&err.code==="declined")return;cvSay("Téléchargement indisponible ici")});
 });
+
+/* dock mobile : se range quand on descend, revient quand on remonte */
+(function(){var d=document.getElementById("dock");if(!d)return;var mq=matchMedia("(max-width:560px)"),ly=scrollY,acc=0;
+addEventListener("scroll",function(){var y=scrollY,dy=y-ly;ly=y;if(!mq.matches){d.classList.remove("tuck");return}
+if(y<120||innerHeight+y>=document.documentElement.scrollHeight-60){d.classList.remove("tuck");acc=0;return}
+acc=(dy>0)===(acc>0)?acc+dy:dy;if(acc>40)d.classList.add("tuck");else if(acc<-24)d.classList.remove("tuck")},{passive:true})})();
 </script>
