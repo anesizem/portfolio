@@ -1180,13 +1180,18 @@ function update(){
   }
   if(FINE){px+=(mx+28-px)*.15;py+=(my-80-py)*.15;var pw=peek.offsetWidth||300,ph=peek.offsetHeight||225;peek.style.left=Math.min(px,innerWidth-pw-16)+"px";peek.style.top=clamp(py,70,V-ph-16)+"px"}
 }
+var scrolling=false,scT,lastG=0;
+addEventListener("scroll",function(){scrolling=true;clearTimeout(scT);scT=setTimeout(function(){scrolling=false},220)},{passive:true});
 function frame(now){
   if(lenis)lenis.raf(now);
   update();
+  /* téléphones et navigateurs intégrés : on ne dessine rien pendant le défilement pour laisser l'écran se peindre */
+  if(TOUCH&&scrolling){requestAnimationFrame(frame);return}
   var t=(now-t0)/1000;
   if(current==="home"&&heroP<1.25)draw(now);
+  if(!TOUCH||now-lastG>66){lastG=now;
   if(current==="home")drawGlyphs(RM?0:t);
-  var pr=pc.getBoundingClientRect();if(pr.bottom>0&&pr.top<innerHeight)drawPulse(RM?0:t);
+  var pr=pc.getBoundingClientRect();if(pr.bottom>0&&pr.top<innerHeight)drawPulse(RM?0:t);}
   requestAnimationFrame(frame);
 }
 /* chiffres qui roulent */
