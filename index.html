@@ -440,15 +440,15 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
 .future .fhead h3{font-family:var(--f-display);font-size:clamp(2rem,3.6vw,3rem);line-height:1;margin:12px 0}
 .future .fhead h3 em{font-style:italic;color:var(--muted)}
 .future .fhead p:last-child{color:var(--muted);max-width:24em}
-.fslots{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.fslots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .fslot{border:1.5px dashed var(--rule);border-radius:20px;min-height:220px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;color:var(--muted)}
 .fslot b{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(2.6rem,4vw,3.4rem);color:var(--rule);line-height:1}
 .fslot span:last-child{font-size:.9rem}
-.fslot.wip{min-height:0;border-style:solid;border-color:var(--signal-ink);color:var(--ink);gap:14px}
+.fslot.wip{min-height:0;justify-content:flex-start;border-style:solid;border-color:var(--signal-ink);color:var(--ink);gap:14px}
 .fslot.wip .st{font-style:normal;color:var(--signal-ink)}
 .fslot.wip b{color:var(--ink);font-size:clamp(1.7rem,2.6vw,2.2rem);line-height:1.05}
 .fslot.wip p{margin:0;color:var(--muted);font-size:.92rem}
-.fslot.wip .wt{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.fslot.wip .wt{margin-top:auto;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
 .future.onpage{margin-top:clamp(56px,7vw,100px)}
 @media (max-width:900px){.future{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:560px){.cvtop .tag{display:none}.cvtop{justify-content:flex-end}.fslots{grid-template-columns:minmax(0,1fr)}.fslot{min-height:150px}}
@@ -577,9 +577,10 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
     <div class="track" id="track"></div>
     <a class="more" href="#projets">Voir les projets en détail <span aria-hidden="true">→</span></a>
     <div class="future">
-      <div class="fhead"><p class="tag">[ en cours ]</p><h3>Prochain <em>projet</em></h3><p>Un nouveau projet data est en cours. Il apparaîtra en détail ici dès qu'il sera terminé.</p></div>
+      <div class="fhead"><p class="tag">[ en cours ]</p><h3>Projets <em>en cours</em></h3><p>Deux projets data sont en cours. Ils apparaîtront en détail ici dès qu'ils seront terminés.</p></div>
       <div class="fslots">
         <div class="fslot wip"><span class="tag">04 · <i class="st">en cours</i></span><b>Portée ou abonnés&nbsp;?</b><p>Analyse de mes publications : à partir des statistiques de 23 posts sur TikTok, Snapchat et Instagram, j'étudie ce qui fait gagner des abonnés plutôt que des vues (durée, partages, abandon, plateforme).</p><span class="wt">Excel · Python (pandas)</span></div>
+        <div class="fslot wip"><span class="tag">05 · <i class="st">en cours</i></span><b>Mbappé × Chine&nbsp;: mesurer une crise</b><p>Le 26 octobre 2026, une blague de Mbappé sur un mème « dictateur chinois » entraîne la rupture de trois sponsors chinois, la suspension de la LaLiga sur CCTV et une baisse de l'action On, son équipementier. Je construis une base de 62 événements sourcés et classés par fiabilité (confirmé, estimation, rumeur), puis je mesure la réaction boursière d'On face à Nike et au S&amp;P 500, en isolant l'effet de la polémique de la tendance déjà baissière. Avec des précédents comparables (NBA 2019, H&amp;M 2021), j'en tire des indicateurs de sortie de crise et des recommandations par acteur. Projet mis à jour au fil de l'actualité.</p><span class="wt">Excel · SQL · Python · Power BI</span></div>
       </div>
     </div>
 
@@ -667,9 +668,10 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
   <p class="plead">Un projet data et deux campagnes, chacun résumé par le chiffre qui compte.</p>
   <div class="cards" id="cards"></div>
     <div class="future onpage">
-      <div class="fhead"><p class="tag">[ en cours ]</p><h3>Prochain <em>projet</em></h3><p>Un nouveau projet data est en cours. Il apparaîtra en détail ici dès qu'il sera terminé.</p></div>
+      <div class="fhead"><p class="tag">[ en cours ]</p><h3>Projets <em>en cours</em></h3><p>Deux projets data sont en cours. Ils apparaîtront en détail ici dès qu'ils seront terminés.</p></div>
       <div class="fslots">
         <div class="fslot wip"><span class="tag">04 · <i class="st">en cours</i></span><b>Portée ou abonnés&nbsp;?</b><p>Analyse de mes publications : à partir des statistiques de 23 posts sur TikTok, Snapchat et Instagram, j'étudie ce qui fait gagner des abonnés plutôt que des vues (durée, partages, abandon, plateforme).</p><span class="wt">Excel · Python (pandas)</span></div>
+        <div class="fslot wip"><span class="tag">05 · <i class="st">en cours</i></span><b>Mbappé × Chine&nbsp;: mesurer une crise</b><p>Le 26 octobre 2026, une blague de Mbappé sur un mème « dictateur chinois » entraîne la rupture de trois sponsors chinois, la suspension de la LaLiga sur CCTV et une baisse de l'action On, son équipementier. Je construis une base de 62 événements sourcés et classés par fiabilité (confirmé, estimation, rumeur), puis je mesure la réaction boursière d'On face à Nike et au S&amp;P 500, en isolant l'effet de la polémique de la tendance déjà baissière. Avec des précédents comparables (NBA 2019, H&amp;M 2021), j'en tire des indicateurs de sortie de crise et des recommandations par acteur. Projet mis à jour au fil de l'actualité.</p><span class="wt">Excel · SQL · Python · Power BI</span></div>
       </div>
     </div>
 
