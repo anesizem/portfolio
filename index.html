@@ -502,7 +502,7 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
 </div>
 <header class="nav wrap" id="nav">
   <a class="brand" href="#accueil" aria-label="Accueil">Anes Izem<i aria-hidden="true"></i></a>
-  <span class="navr"><span class="chip-s"><i aria-hidden="true"></i>Cherche une alternance en data</span><button type="button" class="cvbtn" data-cvopen>Mon CV <span aria-hidden="true">↗</span></button></span>
+  <span class="navr"><span class="chip-s"><i aria-hidden="true"></i>Alternance ou stage alterné en data</span><button type="button" class="cvbtn" data-cvopen>Mon CV <span aria-hidden="true">↗</span></button></span>
 </header>
 <div class="dock" id="dock">
   <button type="button" class="dnote" data-copy>Copier mon email ↗</button>
@@ -649,11 +649,11 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
   <section class="sec wrap" id="recherche" style="padding-top:0">
     <div class="head">
       <p class="tag">[ ce que je recherche ]</p>
-      <div><h2>Une alternance <em>en data</em>,<br>sur trois ans.</h2></div>
+      <div><h2>Une alternance <em>en data</em>,<br>ou un stage alterné.</h2></div>
     </div>
     <dl class="want">
       <div><dt class="tag">Poste</dt><dd>Data analyst ou BI<small>avec l'analytics engineering en ligne de mire</small></dd></div>
-      <div><dt class="tag">Rythme</dt><dd>1 semaine / 1 semaine<small>alternance de 3 ans, L3 puis master</small></dd></div>
+      <div><dt class="tag">Rythme</dt><dd>1 semaine école / 1 semaine entreprise<small>alternance (L3 puis master) ou stage alterné</small></dd></div>
       <div><dt class="tag">Lieu</dt><dd>Toute l'Île-de-France<small>permis B, véhiculé</small></dd></div>
       <div><dt class="tag">Début</dt><dd>Dès que possible</dd></div>
     </dl>
@@ -829,7 +829,7 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
   <div class="inner wrap">
     <p class="tag">[ prochaine étape ]</p>
     <h2>Le prochain signal,<br>c'est <em>votre</em> message.</h2>
-    <p class="status"><i aria-hidden="true"></i>Je cherche une alternance en data en Île-de-France, dès que possible.</p>
+    <p class="status"><i aria-hidden="true"></i>Je cherche une alternance ou un stage alterné en data (1 semaine école, 1 semaine entreprise) en Île-de-France, dès que possible.</p>
     <div class="reach">
       <div><span class="tag">Email</span><span class="val" id="email">anes.izem.pro@gmail.com</span><button type="button" class="copy" data-copy>Copier</button></div>
       <div><span class="tag">CV</span><button type="button" class="cvlink" data-cvopen>Voir mon CV ↗</button></div>
@@ -1191,7 +1191,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIn
 $$(".roll[data-v]").forEach(function(r){if(RM)$$(".dg",r).forEach(function(d){d.firstChild.style.transform="translateY(-"+d.dataset.d+"em)"});else io.observe(r)});
 
 /* ligne « en ce moment » */
-var TK=["J'apprends <b>SQL</b>","J'apprends <b>Python</b>","J'apprends <b>Power BI</b>","Je publie <b>mon propre contenu</b>","Je cherche <b>une alternance en data</b>"],tkEl=$("#tk"),tki=0;
+var TK=["J'apprends <b>SQL</b>","J'apprends <b>Python</b>","J'apprends <b>Power BI</b>","Je publie <b>mon propre contenu</b>","Je cherche <b>une alternance ou un stage alterné</b>"],tkEl=$("#tk"),tki=0;
 TK.forEach(function(x,i){var s=document.createElement("span");s.innerHTML=x;s.style.transform=i?"translateY(110%)":"none";s.style.opacity=i?0:1;tkEl.appendChild(s)});
 var tks=$$("span",tkEl);
 if(!RM)setInterval(function(){var a=tks[tki];tki=(tki+1)%tks.length;var b=tks[tki];a.style.transform="translateY(-110%)";a.style.opacity=0;b.style.transition="none";b.style.transform="translateY(110%)";b.offsetHeight;b.style.transition="";b.style.transform="none";b.style.opacity=1},2600);
