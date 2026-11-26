@@ -7,7 +7,7 @@
 <meta property="og:title" content="Anes Izem – Portfolio">
 <meta property="og:description" content="Créateur de contenu qui se forme à l'analyse de données. Je cherche un stage alterné en data en Île-de-France.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://izemanes.github.io/portfolio/">
+<meta property="og:url" content="https://anesizem.github.io/portfolio/">
 </head>
 <body>
 <title>Anes Izem – Portfolio</title>
@@ -832,7 +832,7 @@ html.intro-on .dock{transform:translate(-50%,140%);opacity:0}
       <div><span class="tag">Email</span><span class="val" id="email">anes.izem.pro@gmail.com</span><button type="button" class="copy" data-copy>Copier</button></div>
       <div><span class="tag">CV</span><button type="button" class="cvlink" data-cvopen>Voir mon CV ↗</button></div>
       <div><span class="tag">Téléphone</span><span class="val" id="tel">+33 7 59 58 29 59</span><button type="button" class="copy" data-copytel>Copier</button></div>
-      <div><span class="tag">Réseaux</span><a href="https://www.linkedin.com/in/anes-izem-7592302b4/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/izemanes" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <div><span class="tag">Réseaux</span><a href="https://www.linkedin.com/in/anes-izem-7592302b4/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/anesizem" target="_blank" rel="noopener">GitHub ↗</a></div>
     </div>
     <div class="foot"><span>© 2026 Anes Izem · Les chiffres de ce site sont réels.</span><span class="kbdhint">Astuce : les touches <kbd>1</kbd> à <kbd>6</kbd> du clavier permettent de naviguer.</span><button type="button" id="top">Retour en haut ↑</button></div>
   </div>
@@ -870,7 +870,7 @@ var RM=matchMedia("(prefers-reduced-motion: reduce)").matches, FINE=matchMedia("
 if(!RM)root.classList.add("anim");
 var playIntro=!RM&&root.classList.contains("intro-on");
 var PROJECTS=[
-  {grid:"data",tag:"Data",draft:false,link:"https://github.com/izemanes/analyste-ia-fiable",title:"Analyste IA fiable",team:"En binôme avec une IA (Claude)",dur:"",why:"Aujourd'hui, tout le monde utilise l'IA sans vérifier ce qu'elle produit. Utiliser l'IA est une très bonne chose, il faut vivre avec son temps, mais il faut s'en servir intelligemment et sans en devenir dépendant. Pour moi, ce doit être un travail d'équipe : produire ensemble un travail d'une qualité qu'une IA seule ou un humain seul ne pourrait pas atteindre. Ce projet mesure exactement ça.",intro:"Peut-on faire confiance à une IA qui répond aux questions chiffrées d'une entreprise ? Un banc d'essai de 60 questions pour le mesurer.",
+  {grid:"data",tag:"Data",draft:false,link:"https://github.com/anesizem/analyste-ia-fiable",title:"Analyste IA fiable",team:"En binôme avec une IA (Claude)",dur:"",why:"Aujourd'hui, tout le monde utilise l'IA sans vérifier ce qu'elle produit. Utiliser l'IA est une très bonne chose, il faut vivre avec son temps, mais il faut s'en servir intelligemment et sans en devenir dépendant. Pour moi, ce doit être un travail d'équipe : produire ensemble un travail d'une qualité qu'une IA seule ou un humain seul ne pourrait pas atteindre. Ce projet mesure exactement ça.",intro:"Peut-on faire confiance à une IA qui répond aux questions chiffrées d'une entreprise ? Un banc d'essai de 60 questions pour le mesurer.",
    ctx:"Une IA sait écrire une requête SQL, mais elle peut livrer un chiffre faux sans le signaler. Sur des données d'entreprise réalistes (statuts, TVA, remises, retours, doublons clients, saisies incohérentes), une requête naïve surestime le chiffre d'affaires de 45 % et la marge de 75 %. J'ai voulu mesurer ce risque et comparer trois façons de brancher l'IA aux données. Projet réalisé en binôme avec une IA (Claude). Les données sont fictives (boutique en ligne Atelier Nord, 22 706 commandes sur 3 ans, pièges insérés volontairement) pour connaître la bonne réponse avec certitude.",
    steps:["Génération d'un jeu de données volontairement difficile, avec les bonnes réponses calculées en SQL pur","Nettoyage et modélisation avec dbt et DuckDB, contrôlés par 37 tests de qualité automatiques","Couche sémantique : chaque indicateur (CA, marge, panier moyen, clients actifs) défini une seule fois, le SQL étant généré par du code et non par l'IA","Banc d'essai de 60 questions (simples, moyennes, difficiles, et 10 où la bonne réponse est de ne pas répondre)","Comparaison de 3 conditions : tables brutes, tables brutes + glossaire métier, couche sémantique","Notation automatique et rapport : réponse juste, abstention à raison, chiffre faux silencieux, erreur visible"],
    tools:"Python, SQL, DuckDB, dbt, YAML, pytest, GitHub Actions",res:"Score global sur 60 questions : tables brutes 18 %, tables brutes + glossaire 95 %, couche sémantique 100 %. Chiffres faux livrés sans alerte : 72 % des questions sur tables brutes, 5 % avec le glossaire, 0 % avec la couche sémantique. Une bonne documentation suffit donc presque, et la couche sémantique supprime les erreurs restantes tout en répondant plus vite (3,7 s contre 7,6 s) et avec environ 6 fois moins de texte généré. Mesure lancée sur une vraie IA (Claude) le 18 octobre 2026. Limites : données fictives, 60 questions, un seul passage, et une couche sémantique légère faite maison."},
